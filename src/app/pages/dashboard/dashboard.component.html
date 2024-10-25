@@ -1,0 +1,25 @@
+<h1 class="text-center mt-5">Movies</h1>
+<div class="row row-cols-md-5 my-5">
+  <div
+    class="col text-center d-flex align-items-stretch"
+    *ngFor="let movie of movies"
+  >
+    <div class="card w-100">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">
+          {{ movie.year }}
+        </p>
+        <p class="card-text">
+          {{ movie.director }}
+        </p>
+        <button
+          (click)="addToFavorites(movie.id)"
+          class="btn btn-primary mt-auto"
+        >
+          Like
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

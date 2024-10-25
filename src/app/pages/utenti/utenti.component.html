@@ -1,0 +1,8 @@
+<h1 class="text-center mt-5 mx-auto">Utenti</h1>
+<ul *ngFor="let user of users" class="text-start mt-5">
+  <li class="list-unstyled">
+    <h3>Nome: {{ user.name }}</h3>
+    <h5>Email: {{ user.email }}</h5>
+    <hr />
+  </li>
+</ul>

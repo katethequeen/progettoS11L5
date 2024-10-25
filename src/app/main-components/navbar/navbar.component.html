@@ -1,0 +1,60 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center">
+      <ul class="nav col-12 col-lg-auto mb-2 mb-md-0 justify-content-center">
+        <li>
+          <a
+            *ngIf="isLoggedIn"
+            routerLink="/dashboard"
+            class="nav-link px-2"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            *ngIf="isLoggedIn"
+            routerLink="/utenti"
+            class="nav-link px-2"
+            routerLinkActive="active"
+            >Utenti</a
+          >
+        </li>
+        <li>
+          <a
+            *ngIf="isLoggedIn"
+            routerLink="/profilo"
+            class="nav-link px-2"
+            routerLinkActive="active"
+            >Profilo</a
+          >
+        </li>
+      </ul>
+
+      <div class="text-end">
+        <a
+          *ngIf="!isLoggedIn"
+          routerLink="/auth/login"
+          type="button"
+          class="btn btn-outline-light me-3"
+          >Login</a
+        >
+        <a
+          *ngIf="!isLoggedIn"
+          routerLink="/auth/register"
+          type="button"
+          class="btn btn-warning"
+          >Register</a
+        >
+        <button
+          *ngIf="isLoggedIn"
+          class="btn btn-outline-warning"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -79,4 +79,9 @@ export class AuthService {
     }
     this.authSubject$.next(accessData);
   }
+
+  getUserId(): number | null {
+    const currentUser: iAccessData | null = this.authSubject$.value;
+    return currentUser && currentUser.user ? currentUser.user.id : null;
+  }
 }

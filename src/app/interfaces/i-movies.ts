@@ -1,8 +1,11 @@
 export interface iMovies {
+  actors: string;
   title: string;
   director: string;
+  genre: string;
   year: number;
+  plot: string;
   poster: string;
-  id: number;
-  userId: number;
+  released: string;
+  movieId: number;
 }

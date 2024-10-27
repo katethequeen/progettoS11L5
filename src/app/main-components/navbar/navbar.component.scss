@@ -1,6 +1,6 @@
-.nav-link.active {
-  color: white !important;
+.nav-link {
+  color: white;
 }
-.nav-link.inactive {
-  color: grey !important;
+.nav-link.active {
+  opacity: 0.6;
 }

@@ -1,6 +1,14 @@
-<h1 class="text-center">Profilo</h1>
-<h5 class="text-start">Nome utente: {{ user.name }}</h5>
-<h5 class="text-start">Email: {{ user.email }}</h5>
+<h1 class="text-center mt-5">Profilo</h1>
+<div class="my-3 text-center">
+  <h5>
+    Nome utente: <br />
+    {{ user.name }}
+  </h5>
+  <h5>
+    Email: <br />
+    {{ user.email }}
+  </h5>
+</div>
 
 <h2 class="text-center">Le tue preferenze</h2>
 <div class="row row-cols-md-5 my-5">
@@ -17,7 +25,13 @@
         <p class="card-text">
           {{ movie.director }}
         </p>
-        <button type="button" class="btn btn-primary mt-auto">Rimuovi</button>
+        <button
+          (click)="removeFromFavorites(movie.movieId)"
+          type="button"
+          class="btn btn-primary mt-auto"
+        >
+          Rimuovi
+        </button>
       </div>
     </div>
   </div>

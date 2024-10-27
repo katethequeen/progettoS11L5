@@ -17,8 +17,18 @@ export class LoginComponent {
   constructor(private authSvc: AuthService, private router: Router) {}
 
   login() {
-    this.authSvc.login(this.formData).subscribe((data) => {
-      this.router.navigate(['/dashboard']);
+    console.log('Dati del Form', this.formData);
+    this.authSvc.login(this.formData).subscribe({
+      next: (data) => {
+        console.log('Accesso avvenuto con successo', data);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.log('Errore durante il login', err);
+      },
+      complete: () => {
+        console.log('Login completato');
+      },
     });
   }
 }
